@@ -46,10 +46,17 @@
     </div>
 
     <div class="form-group row">
-        <label class="col-2 col-form-label">Nombre</label>
+        <label class="col-2 col-form-label">Género</label>
         <div class="col-8">
-            <div class="form-check form-check-inline"></div>
-            <input class="form-check-input">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" [ngModel]="usuario.genero" [class.is-invalid]="genero.invalid && genero.touched" name="genero" #genero="ngModel" value="M" required>
+                <label class="form-check-label">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" ngModel [class.is-invalid]="genero.invalid && genero.touched" name="genero" #genero="ngModel" value="F" required>
+                <label class="form-check-label">Femenino</label>
+            </div>
+            <small class="form-text text-danger" *ngIf="genero.invalid && genero.touched"> obligatorio </small>
 
         </div>
     </div>
